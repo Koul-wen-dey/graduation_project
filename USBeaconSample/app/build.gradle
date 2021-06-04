@@ -1,0 +1,25 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.THLight.USBeacon.Sample"
+        minSdkVersion 21
+        targetSdkVersion 28
+    }
+    useLibrary 'org.apache.http.legacy'
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation('com.android.support:design:27.1.1')
+    implementation files('libs/libusbeaconapp.jar')
+    implementation files('libs/thlutil.jar')
+    implementation files('libs/httpcore5-5.1.1.jar')
+}

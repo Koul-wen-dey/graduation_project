@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:weightSum="1920">
+
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="120"
+		android:background="#FF000000"
+		android:gravity="center"
+		android:text="just a test"
+		android:textColor="@android:color/background_light" />
+	<ImageView
+		android:id="@+id/Pic"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_gravity="center_horizontal"
+		android:layout_weight="600"
+		android:background="#FF000000"
+		android:src="@drawable/ic_launcher"
+		/>
+
+<!--
+	<com.THLight.USBeacon.Sample.ui.recyclerview.CustomRecyclerView
+		android:id="@+id/beacon_recyclerView"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1800"
+		android:background="#FF000000"
+		android:divider="#55FFFFFF"
+		android:dividerHeight="2dp"
+		android:paddingLeft="10dp"
+		android:paddingRight="10dp"
+		android:scrollbars="vertical" />
+-->
+</LinearLayout>
