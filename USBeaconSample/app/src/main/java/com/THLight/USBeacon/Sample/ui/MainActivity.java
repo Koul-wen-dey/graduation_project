@@ -85,11 +85,11 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     /**
      * this UUID is generate by Server while register a new account.
      */
-    private final UUID QUERY_UUID = UUID.fromString("BB746F72-282F-4378-9416-89178C1019FC");
+    //private final UUID QUERY_UUID = UUID.fromString("BB746F72-282F-4378-9416-89178C1019FC");
     /**
      * server http api url.
      */
-    private static final String HTTP_API = "http://www.usbeacon.com.tw/api/func";
+    //private static final String HTTP_API = "http://www.usbeacon.com.tw/api/func";
     private static String STORE_PATH = Environment.getExternalStorageDirectory().toString() + "/USBeaconSample/";
     private static final int REQ_ENABLE_BT = 2000;
     private static final int MSG_SERVER_RESPONSE = 3000;
@@ -108,12 +108,16 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     private boolean isFirstPage = true;
     private boolean isNeedNotify = true;
     private boolean isFront = true;
-    private CustomRecyclerView recyclerView;
+    //private CustomRecyclerView recyclerView;
     private ScannerService scannerService;
     private PowerManager.WakeLock serviceWakeLock;
-    private String Query;
+    //private String Query;
+    private readCsvThread csvTable;
+    private ArrayList<String> csvData = new ArrayList<String>();
     ImageView imageView = null;
-    String star = "A4:34:F1:89:ED:B4";
+    String star = "A4:34:F1:89:ED:B4";//系辦
+    String peko = "A4:34:F1:89:EF:4B";//5012
+    String third = "A4:34:F1:89:E7:92";//5002
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,8 +126,8 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
         Config = thLightApplication.Config;
         imageView = (ImageView)findViewById(R.id.Pic);
         imageView.setImageResource(R.drawable.ic_launcher);
-        Thread thread = new Thread(multiThread);
-        thread.run();
+        //Thread thread = new Thread(multiThread);
+        //thread.run();
         permissionCheck();
         //CreateStoreFolder();
         //networkCheck();
@@ -563,9 +567,18 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                 imageView.setImageDrawable(d);
             }
         }
-        Query = "";
-        multiThread.run();
+        //Query = "";
+        //multiThread.run();
+        openCsv();
     }
+    void openCsv(){
+
+        csvTable = new readCsvThread(this);
+        csvTable.run();
+        csvData.clear();
+        csvData.addAll(csvTable.table);
+    }
+    /*
     private Runnable multiThread = new Runnable() {
         @Override
         public void run() {
@@ -610,10 +623,8 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-
         }
-    };
+    };*/
 
 
 }
