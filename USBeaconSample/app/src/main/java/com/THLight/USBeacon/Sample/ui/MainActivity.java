@@ -21,7 +21,10 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
 import java.util.UUID;
 
 import android.Manifest;
@@ -49,6 +52,7 @@ import android.os.PowerManager;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.apache.hc.core5.http.NameValuePair;
@@ -78,6 +82,7 @@ import com.THLight.USBeacon.Sample.service.ScannerService;
 import com.THLight.USBeacon.Sample.ui.recyclerview.CustomLinearLayoutManager;
 import com.THLight.USBeacon.Sample.ui.recyclerview.CustomRecyclerView;
 import com.THLight.USBeacon.Sample.ui.recyclerview.RecyclerViewAdapter;
+import com.THLight.USBeacon.Sample.ui.readCsvThread;
 import com.THLight.USBeacon.Sample.ui.recyclerview.ScanDeviceViewType;
 import com.THLight.Util.THLLog;
 
@@ -113,11 +118,15 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     private PowerManager.WakeLock serviceWakeLock;
     //private String Query;
     private readCsvThread csvTable;
-    private ArrayList<String> csvData = new ArrayList<String>();
+    private ArrayList<String[]> csvData = new ArrayList<String[]>();
     ImageView imageView = null;
-    String star = "A4:34:F1:89:ED:B4";//系辦
-    String peko = "A4:34:F1:89:EF:4B";//5012
-    String third = "A4:34:F1:89:E7:92";//5002
+    TextView classroom = null;
+    TextView course = null;
+    TextView remark = null;
+    Calendar currentTime;
+    String star = "A4:34:F1:89:ED:B4";//5012
+    String peko = "A4:34:F1:89:EF:4B";//5007
+    String third = "A4:34:F1:89:E7:92";//系辦
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +135,12 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
         Config = thLightApplication.Config;
         imageView = (ImageView)findViewById(R.id.Pic);
         imageView.setImageResource(R.drawable.ic_launcher);
+        classroom = (TextView)findViewById(R.id.classroom);
+        course = (TextView)findViewById(R.id.course);
+        remark = (TextView)findViewById(R.id.remark);
+        openCsv();
+        //readCsvThread MyThread = new readCsvThread(this);
+
         //Thread thread = new Thread(multiThread);
         //thread.run();
         permissionCheck();
@@ -541,42 +556,89 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     }
 
     void showSomePic(List<ScanDeviceItemEntity> info){
+        String which = null;
         if(info.size() == 0)
             return;
         else if(info.size() == 1)
         {
-
-
             if(star.equals(info.get(0).getMacAddress())){
+                Drawable d = getResources().getDrawable(R.drawable.star);
+                imageView.setImageDrawable(d);
+            }
+            else if(peko.equals(info.get(0).getMacAddress())){
                 Drawable d = getResources().getDrawable(R.drawable.peko);
                 imageView.setImageDrawable(d);
             }
             else{
-                Drawable d = getResources().getDrawable(R.drawable.star);
+                Drawable d = getResources().getDrawable(R.drawable.ic_launcher);
                 imageView.setImageDrawable(d);
             }
+            which = info.get(0).getMacAddress();
         }
         else{
-            if(Integer.valueOf(info.get(0).getRssi()) > Integer.valueOf(info.get(1).getRssi()))
-            {
+            int pos=0;
+            for (int i=0;i<info.size()-1;i++){
+                if(Integer.valueOf(info.get(pos).getRssi()) < Integer.valueOf(info.get(i+1).getRssi())) {
+                    pos = i;
+                }
+            }
+            if(star.equals(info.get(pos).getMacAddress())){
                 Drawable d = getResources().getDrawable(R.drawable.star);
                 imageView.setImageDrawable(d);
             }
-            else{
+            else if(peko.equals(info.get(pos).getMacAddress())){
                 Drawable d = getResources().getDrawable(R.drawable.peko);
                 imageView.setImageDrawable(d);
             }
+            else{
+                Drawable d = getResources().getDrawable(R.drawable.ic_launcher);
+                imageView.setImageDrawable(d);
+            }
+            which = info.get(pos).getMacAddress();
         }
-        //Query = "";
-        //multiThread.run();
-        openCsv();
+        info_class(which);
     }
     void openCsv(){
-
         csvTable = new readCsvThread(this);
         csvTable.run();
         csvData.clear();
         csvData.addAll(csvTable.table);
+    }
+    void info_class(String which){
+        currentTime = Calendar.getInstance();
+        int month = currentTime.get(Calendar.MONTH);
+        int day_of_week = currentTime.get(Calendar.DAY_OF_WEEK);
+        int hour = currentTime.get(Calendar.HOUR) - 7;
+
+        for(int i=0;i<csvData.size();i++){
+            if(which.equals(csvData.get(i)[0])){
+                if(csvData.get(i)[0].equals(third)){
+                    classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
+                    course.setText("課程 : \n"+csvData.get(i)[6]);
+                    remark.setText("備註 : \n"+csvData.get(i)[7]);
+                    return;
+                }
+                else if((month > 8 || month == 1) && Integer.valueOf(csvData.get(i)[2]) == 1 ||
+                        (month > 1 && month < 7) && Integer.valueOf(csvData.get(i)[2]) == 2)
+                {
+                    if(Integer.valueOf(csvData.get(i)[3]) == day_of_week && timerange(hour,Integer.valueOf(csvData.get(i)[4]),Integer.valueOf(csvData.get(i)[5]))) {
+                        classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
+                        course.setText("課程 : \n"+csvData.get(i)[6]);
+                        remark.setText("備註 : \n"+csvData.get(i)[7]);
+                        return;
+                    }
+                }
+                else if((month == 7 || month == 8) && timerange(hour,Integer.valueOf(csvData.get(i)[4]),Integer.valueOf(csvData.get(i)[5]))){
+                    classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
+                    course.setText("課程 : \n"+csvData.get(i)[6]);
+                    remark.setText("備註 : \n"+csvData.get(i)[7]);
+                    return;
+                }
+            }
+        }
+    }
+    boolean timerange(int now,int start,int end){
+        return now >= start && now <= end;
     }
     /*
     private Runnable multiThread = new Runnable() {
@@ -625,6 +687,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
             }
         }
     };*/
+
 
 
 }

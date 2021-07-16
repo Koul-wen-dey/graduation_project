@@ -11,16 +11,47 @@
 		android:layout_weight="120"
 		android:background="#FF000000"
 		android:gravity="center"
-		android:text="just a test"
+		android:text="地圖導覽"
 		android:textColor="@android:color/background_light" />
 	<ImageView
 		android:id="@+id/Pic"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
+		android:layout_height="wrap_content"
 		android:layout_gravity="center_horizontal"
 		android:layout_weight="600"
 		android:background="#FF000000"
 		android:src="@drawable/ic_launcher"
+		/>
+	<TextView
+		android:id="@+id/classroom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="200"
+		android:layout_gravity="center_horizontal"
+		android:background="#FF000000"
+		android:text="所在位置 : \n"
+		android:textColor="@android:color/background_light" />
+		/>
+	<TextView
+		android:id="@+id/course"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="200"
+		android:layout_gravity="center_horizontal"
+		android:background="#FF000000"
+		android:text="課程 : \n"
+		android:textColor="@android:color/background_light" />
+		/>
+
+	<TextView
+		android:id="@+id/remark"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_weight="800"
+		android:background="#FF000000"
+		android:text="備註 : \n"
+		android:textColor="@android:color/background_light" />
 		/>
 
 <!--
