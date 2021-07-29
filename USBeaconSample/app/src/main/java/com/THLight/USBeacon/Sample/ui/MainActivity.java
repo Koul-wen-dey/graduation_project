@@ -22,6 +22,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.TimeZone;
 import java.util.Date;
 import java.util.List;
 
@@ -475,7 +476,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
 
         @Override
         public void onScanDeviceResponse(iBeaconData iBeaconData) {
-            System.out.println("onScanDeviceResponse");
+            //System.out.println("onScanDeviceResponse");
             isFirstPage = scanDeviceItemEntityList.size() < 20;
             addOrUpdateIBeaconDataList(iBeaconData);
             if (isFirstPage) {
@@ -577,11 +578,13 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
         }
         else{
             int pos=0;
-            for (int i=0;i<info.size()-1;i++){
-                if(Integer.valueOf(info.get(pos).getRssi()) < Integer.valueOf(info.get(i+1).getRssi())) {
+            for (int i=1;i<info.size();i++){
+                if(Integer.valueOf(info.get(pos).getRssi()) < Integer.valueOf(info.get(i).getRssi())) {
                     pos = i;
                 }
             }
+
+            //System.out.println(info.get(pos).getMacAddress());
             if(star.equals(info.get(pos).getMacAddress())){
                 Drawable d = getResources().getDrawable(R.drawable.star);
                 imageView.setImageDrawable(d);
@@ -595,6 +598,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                 imageView.setImageDrawable(d);
             }
             which = info.get(pos).getMacAddress();
+            //System.out.println(which);
         }
         info_class(which);
     }
@@ -605,11 +609,17 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
         csvData.addAll(csvTable.table);
     }
     void info_class(String which){
-        currentTime = Calendar.getInstance();
-        int month = currentTime.get(Calendar.MONTH);
-        int day_of_week = currentTime.get(Calendar.DAY_OF_WEEK);
-        int hour = currentTime.get(Calendar.HOUR) - 7;
+        currentTime = Calendar.getInstance(TimeZone.getDefault());
+        /*註解掉的變數才是正式上線的變數，未註解的是用來測試，因為要測時間跟課表是否能對上*/
+        //int month = currentTime.get(Calendar.MONTH) + 1;
+        int month = currentTime.get(Calendar.MONTH) + 3;
+        int day_of_week = currentTime.get(Calendar.DAY_OF_WEEK)-5;
+        //int hour = currentTime.get(Calendar.HOUR) -7;
+        int hour = currentTime.get(Calendar.HOUR) ;
 
+        System.out.println("month"+month);
+        System.out.println("week"+day_of_week);
+        System.out.println("hour"+hour);
         for(int i=0;i<csvData.size();i++){
             if(which.equals(csvData.get(i)[0])){
                 if(csvData.get(i)[0].equals(third)){
@@ -628,7 +638,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                         return;
                     }
                 }
-                else if((month == 7 || month == 8) && timerange(hour,Integer.valueOf(csvData.get(i)[4]),Integer.valueOf(csvData.get(i)[5]))){
+                if((month == 8 || month == 7 || hour < 1 || hour > 8) && Integer.valueOf(csvData.get(i)[2] )== 0){
                     classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
                     course.setText("課程 : \n"+csvData.get(i)[6]);
                     remark.setText("備註 : \n"+csvData.get(i)[7]);
@@ -636,6 +646,9 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                 }
             }
         }
+        classroom.setText("所在位置 : \n");
+        course.setText("課程 : \n無");
+        remark.setText("備註 : \n休息時間");
     }
     boolean timerange(int now,int start,int end){
         return now >= start && now <= end;
@@ -687,7 +700,5 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
             }
         }
     };*/
-
-
 
 }

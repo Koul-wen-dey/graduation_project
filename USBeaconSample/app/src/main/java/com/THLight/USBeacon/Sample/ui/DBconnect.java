@@ -27,7 +27,7 @@ public class DBconnect {
             HttpPost httpPost = new HttpPost(url);
             ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
             params.add(new BasicNameValuePair("query_string", str));
-            httpPost.setEntity(new UrlEncodedFormEntity((List<? extends org.apache.http.NameValuePair>) params, HTTP.UTF_8));
+            //httpPost.setEntity(new UrlEncodedFormEntity((List<? extends org.apache.http.NameValuePair>) params, HTTP.UTF_8));
             HttpResponse httpResponse = httpClient.execute(httpPost);
             HttpEntity httpEntity = httpResponse.getEntity();
             InputStream inputStream = httpEntity.getContent();
