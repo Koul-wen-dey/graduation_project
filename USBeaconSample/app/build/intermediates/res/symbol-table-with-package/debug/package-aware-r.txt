@@ -715,12 +715,9 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_launcher
-drawable map_01_lobby
-drawable map_02_office_all
-drawable map_03_room1
-drawable map_04_room2
-drawable map_05_room3
+drawable map_5007
 drawable map_5011
+drawable map_5012
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg

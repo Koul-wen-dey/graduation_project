@@ -130,9 +130,9 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     TextView course = null;
     TextView remark = null;
     Calendar currentTime;
-    String star = "A4:34:F1:89:ED:B4";//5012
-    String peko = "A4:34:F1:89:EF:4B";//5007
-    String office = "A4:34:F1:89:E7:92";//系辦
+    String map_5012 = "A4:34:F1:89:ED:B4";//5012
+    String map_5007 = "A4:34:F1:89:EF:4B";//5007
+    String map_office = "A4:34:F1:89:E7:92";//系辦
     String tmp = "";
 
     @Override
@@ -564,12 +564,12 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
             return;
         else if(info.size() == 1)
         {
-            if(star.equals(info.get(0).getMacAddress())){
-                Drawable d = getResources().getDrawable(R.drawable.star);
+            if(map_5012.equals(info.get(0).getMacAddress())){
+                Drawable d = getResources().getDrawable(R.drawable.map_5012);
                 imageView.setImageDrawable(d);
             }
-            else if(peko.equals(info.get(0).getMacAddress())){
-                Drawable d = getResources().getDrawable(R.drawable.peko);
+            else if(map_5007.equals(info.get(0).getMacAddress())){
+                Drawable d = getResources().getDrawable(R.drawable.map_5007);
                 imageView.setImageDrawable(d);
             }
             else{
@@ -587,12 +587,12 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
             }
 
             //System.out.println(info.get(pos).getMacAddress());
-            if(star.equals(info.get(pos).getMacAddress())){
-                Drawable d = getResources().getDrawable(R.drawable.star);
+            if(map_5012.equals(info.get(pos).getMacAddress())){
+                Drawable d = getResources().getDrawable(R.drawable.map_5012);
                 imageView.setImageDrawable(d);
             }
-            else if(peko.equals(info.get(pos).getMacAddress())){
-                Drawable d = getResources().getDrawable(R.drawable.peko);
+            else if(map_5007.equals(info.get(pos).getMacAddress())){
+                Drawable d = getResources().getDrawable(R.drawable.map_5007);
                 imageView.setImageDrawable(d);
             }
             else{
@@ -621,7 +621,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
         System.out.println("hour"+hour);
         for(int i=0;i<csvData.size();i++){
             if(which.equals(csvData.get(i)[0])){
-                if(csvData.get(i)[0].equals(office)){
+                if(csvData.get(i)[0].equals(map_office)){
                     classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
                     course.setText("課程 : \n"+csvData.get(i)[6]);
                     remark.setText("備註 : \n"+csvData.get(i)[7]);
@@ -680,21 +680,9 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                 else Log.d("debug", "mNotificationManager is NULL");
             }
             scannerService.startForeground(110,mNotificationManager.build());
-            /*
-            Notification notification = new Notification.Builder(MainActivity.this)
-                    .setContentIntent(appIntent)
-                    .setSmallIcon(R.drawable.ic_launcher)
-                    .setTicker("Ticker")
-                    .setWhen(System.currentTimeMillis())
-                    .setAutoCancel(false)
-                    .setContentTitle("title")
-                    .setContentText("text")
-                    .setOngoing(false)
-                    .build();
-            mNotificationManager.notify(110,notification);*/
             tmp = which;
         }
-        System.out.println("tmp"+tmp);
+        //System.out.println("tmp"+tmp);
     }
 
 }
