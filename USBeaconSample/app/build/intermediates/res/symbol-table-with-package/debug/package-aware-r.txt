@@ -720,6 +720,7 @@ drawable map_02_office_all
 drawable map_03_room1
 drawable map_04_room2
 drawable map_05_room3
+drawable map_5011
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -781,12 +782,14 @@ id center_horizontal
 id center_vertical
 id checkbox
 id chronometer
+id classroom
 id clip_horizontal
 id clip_vertical
 id collapseActionView
 id container
 id contentPanel
 id coordinator
+id course
 id custom
 id customPanel
 id decor_content_parent
@@ -850,6 +853,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id remark
 id right
 id right_icon
 id right_side
@@ -898,7 +902,6 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
-id textView
 id text_input_password_toggle
 id textinput_counter
 id textinput_error

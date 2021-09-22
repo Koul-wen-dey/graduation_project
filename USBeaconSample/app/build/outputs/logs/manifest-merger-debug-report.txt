@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
 MERGED from [com.android.support:design:27.1.1] /home/koul/.gradle/caches/transforms-2/files-2.1/660a2690d56c2bfef4bfec42ffcfbdcd/design-27.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:27.1.1] /home/koul/.gradle/caches/transforms-2/files-2.1/86d062dfbc214a96a26e85120520015f/support-v4-27.1.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /home/koul/.gradle/caches/transforms-2/files-2.1/34555d386a7eb9ea3045ff1382069509/appcompat-v7-27.1.1/AndroidManifest.xml:17:1-22:12
@@ -20,115 +20,115 @@ MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/koul/.gradle/caches/tra
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/koul/.gradle/caches/transforms-2/files-2.1/06e084fcde9c4549fc294d5fcf377d7c/livedata-core-1.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/koul/.gradle/caches/transforms-2/files-2.1/58707b756588e8d18ddbe512adc6dcdf/viewmodel-1.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /home/koul/.gradle/caches/transforms-2/files-2.1/3a180f34418bc86b05d3c330452a2346/runtime-1.1.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:1-47:12
 	package
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:3:5-42
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
 	android:versionName
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:5:5-30
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:5:5-30
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:4:5-28
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:4:5-28
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:7:5-74
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:7:5-74
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:7:22-71
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:7:22-71
 uses-permission#android.permission.BLUETOOTH
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:8:5-68
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:8:5-68
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:8:22-65
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:8:22-65
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:9:5-79
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:9:22-76
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:10:5-76
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:10:5-76
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:10:22-73
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:10:22-73
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:11:5-76
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:11:5-76
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:11:22-73
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:11:22-73
 uses-permission#android.permission.INTERNET
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:12:5-67
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:12:22-64
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:12:22-64
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:13:5-81
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:13:5-81
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:13:22-78
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:13:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:14:5-80
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:14:5-80
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:14:22-77
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:14:22-77
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:15:5-81
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:15:5-81
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:15:22-78
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:15:22-78
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:17:5-77
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:17:5-77
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:17:22-74
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:17:22-74
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:18:5-67
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:18:5-67
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:18:22-65
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:18:22-65
 uses-feature#android.hardware.bluetooth_le
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:20:5-22:35
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:20:5-22:35
 	android:required
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:22:9-32
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:22:9-32
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:21:9-53
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:21:9-53
 application
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:24:5-45:19
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:24:5-45:19
 	android:label
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:28:9-41
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:28:9-41
 	android:persistent
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:29:9-34
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:29:9-34
 	android:icon
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:27:9-45
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:27:9-45
 	android:allowBackup
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:26:9-35
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:26:9-35
 	android:theme
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:30:9-40
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:30:9-40
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:25:9-70
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:25:9-70
 activity#com.THLight.USBeacon.Sample.ui.MainActivity
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:31:9-41:20
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:31:9-41:20
 	android:screenOrientation
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:35:13-49
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:35:13-49
 	android:label
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:33:13-45
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:33:13-45
 	android:launchMode
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:34:13-43
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:34:13-43
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:32:13-71
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:32:13-71
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:36:13-40:29
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:36:13-40:29
 action#android.intent.action.MAIN
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:37:17-69
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:37:17-69
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:37:25-66
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:37:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:39:17-77
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:39:27-74
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:39:27-74
 service#com.THLight.USBeacon.Sample.service.ScannerService
-ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:43:9-59
+ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:43:9-59
 	android:name
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml:43:18-56
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml:43:18-56
 uses-sdk
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
 MERGED from [com.android.support:design:27.1.1] /home/koul/.gradle/caches/transforms-2/files-2.1/660a2690d56c2bfef4bfec42ffcfbdcd/design-27.1.1/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] /home/koul/.gradle/caches/transforms-2/files-2.1/660a2690d56c2bfef4bfec42ffcfbdcd/design-27.1.1/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] /home/koul/.gradle/caches/transforms-2/files-2.1/86d062dfbc214a96a26e85120520015f/support-v4-27.1.1/AndroidManifest.xml:20:5-44
@@ -161,13 +161,13 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/koul/.gradle/caches/t
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/koul/.gradle/caches/transforms-2/files-2.1/58707b756588e8d18ddbe512adc6dcdf/viewmodel-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] /home/koul/.gradle/caches/transforms-2/files-2.1/3a180f34418bc86b05d3c330452a2346/runtime-1.1.0/AndroidManifest.xml:20:5-44
 MERGED from [android.arch.core:runtime:1.1.0] /home/koul/.gradle/caches/transforms-2/files-2.1/3a180f34418bc86b05d3c330452a2346/runtime-1.1.0/AndroidManifest.xml:20:5-44
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		ADDED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
-		INJECTED from /home/koul/Desktop/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		ADDED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml
+		INJECTED from /home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/src/main/AndroidManifest.xml

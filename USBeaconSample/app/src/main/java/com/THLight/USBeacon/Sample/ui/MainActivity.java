@@ -31,6 +31,10 @@ import java.util.UUID;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
@@ -51,6 +55,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -127,7 +132,8 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     Calendar currentTime;
     String star = "A4:34:F1:89:ED:B4";//5012
     String peko = "A4:34:F1:89:EF:4B";//5007
-    String third = "A4:34:F1:89:E7:92";//系辦
+    String office = "A4:34:F1:89:E7:92";//系辦
+    String tmp = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,10 +146,6 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
         course = (TextView)findViewById(R.id.course);
         remark = (TextView)findViewById(R.id.remark);
         openCsv();
-        //readCsvThread MyThread = new readCsvThread(this);
-
-        //Thread thread = new Thread(multiThread);
-        //thread.run();
         permissionCheck();
         //CreateStoreFolder();
         //networkCheck();
@@ -545,7 +547,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                     data.lastUpdate);
             scanDeviceItemEntityList.add(entity);
         }
-        printinfo(scanDeviceItemEntityList);
+        //printinfo(scanDeviceItemEntityList);
     }
     void printinfo(List<ScanDeviceItemEntity> info)
     {
@@ -571,7 +573,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                 imageView.setImageDrawable(d);
             }
             else{
-                Drawable d = getResources().getDrawable(R.drawable.ic_launcher);
+                Drawable d = getResources().getDrawable(R.drawable.map_5011);
                 imageView.setImageDrawable(d);
             }
             which = info.get(0).getMacAddress();
@@ -594,7 +596,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                 imageView.setImageDrawable(d);
             }
             else{
-                Drawable d = getResources().getDrawable(R.drawable.ic_launcher);
+                Drawable d = getResources().getDrawable(R.drawable.map_5011);
                 imageView.setImageDrawable(d);
             }
             which = info.get(pos).getMacAddress();
@@ -610,31 +612,31 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     }
     void info_class(String which){
         currentTime = Calendar.getInstance(TimeZone.getDefault());
-        /*註解掉的變數才是正式上線的變數，未註解的是用來測試，因為要測時間跟課表是否能對上*/
-        //int month = currentTime.get(Calendar.MONTH) + 1;
-        int month = currentTime.get(Calendar.MONTH) + 3;
-        int day_of_week = currentTime.get(Calendar.DAY_OF_WEEK)-5;
-        //int hour = currentTime.get(Calendar.HOUR) -7;
-        int hour = currentTime.get(Calendar.HOUR) ;
+        int month = currentTime.get(Calendar.MONTH) + 1;
+        int day_of_week = currentTime.get(Calendar.DAY_OF_WEEK)-1 -2;
+        int hour = currentTime.get(Calendar.HOUR) -7 +4;
 
         System.out.println("month"+month);
         System.out.println("week"+day_of_week);
         System.out.println("hour"+hour);
         for(int i=0;i<csvData.size();i++){
             if(which.equals(csvData.get(i)[0])){
-                if(csvData.get(i)[0].equals(third)){
+                if(csvData.get(i)[0].equals(office)){
                     classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
                     course.setText("課程 : \n"+csvData.get(i)[6]);
                     remark.setText("備註 : \n"+csvData.get(i)[7]);
+                    notifications(csvData.get(i)[1]);
                     return;
                 }
                 else if((month > 8 || month == 1) && Integer.valueOf(csvData.get(i)[2]) == 1 ||
                         (month > 1 && month < 7) && Integer.valueOf(csvData.get(i)[2]) == 2)
                 {
+
                     if(Integer.valueOf(csvData.get(i)[3]) == day_of_week && timerange(hour,Integer.valueOf(csvData.get(i)[4]),Integer.valueOf(csvData.get(i)[5]))) {
                         classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
                         course.setText("課程 : \n"+csvData.get(i)[6]);
                         remark.setText("備註 : \n"+csvData.get(i)[7]);
+                        notifications(csvData.get(i)[1]);
                         return;
                     }
                 }
@@ -642,6 +644,7 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
                     classroom.setText("所在位置 : \n"+csvData.get(i)[1]);
                     course.setText("課程 : \n"+csvData.get(i)[6]);
                     remark.setText("備註 : \n"+csvData.get(i)[7]);
+                    notifications(csvData.get(i)[1]);
                     return;
                 }
             }
@@ -653,52 +656,45 @@ public class MainActivity extends Activity implements USBeaconConnection.OnRespo
     boolean timerange(int now,int start,int end){
         return now >= start && now <= end;
     }
-    /*
-    private Runnable multiThread = new Runnable() {
-        @Override
-        public void run() {
-            String result="";
-            try {
-                String db_php = "";
-                String value3="",value2="",value1="";
-                URL url = new URL(db_php);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-                urlConnection.setReadTimeout(10000);
-                urlConnection.setConnectTimeout(15000);
-                urlConnection.setRequestMethod("POST");
-                urlConnection.setDoInput(true);
-                urlConnection.setDoOutput(true);
-                Uri.Builder builder = new Uri.Builder()
-                        .appendQueryParameter("first",value1)
-                        .appendQueryParameter("second",value2)
-                        .appendQueryParameter("third",value3);
-                String query = builder.build().getEncodedQuery();
-                OutputStream os = urlConnection.getOutputStream();
-                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os,"UTF-8"));
-                writer.write(query);
-                writer.flush();
-                writer.close();
-                os.close();
-                if(urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                    InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
-                    String str = null;
-                    StringBuffer buffer = new StringBuffer();
-                    while((str = bufferedReader.readLine())!=null){
-                        buffer.append(str);
-                    }
-                    in.close();
-                    bufferedReader.close();
-                    result = buffer.toString();
+    void notifications(String which){
+        if (!tmp.equals(which)) {
+            NotificationCompat.Builder mNotificationManager = new NotificationCompat.Builder(getApplicationContext(), "notify_002");
+            Intent notifyIntent = new Intent(this, MainActivity.class);
+            //notifyIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            PendingIntent appIntent = PendingIntent.getActivity(this,0,notifyIntent,0);
+
+            mNotificationManager.setContentIntent(appIntent);
+            mNotificationManager.setSmallIcon(R.drawable.ic_launcher);
+            mNotificationManager.setContentTitle("所在地點："+which);
+            mNotificationManager.setPriority(Notification.PRIORITY_MAX);
+            NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (manager != null) {
+                    NotificationChannel channel = new NotificationChannel(
+                            "PRIMARY_CHANNEL_ID",
+                            "123",
+                            NotificationManager.IMPORTANCE_HIGH);
+                    manager.createNotificationChannel(channel);
+                    mNotificationManager.setChannelId("PRIMARY_CHANNEL_ID");
                 }
-            } catch (ProtocolException e) {
-                e.printStackTrace();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+                else Log.d("debug", "mNotificationManager is NULL");
             }
+            scannerService.startForeground(110,mNotificationManager.build());
+            /*
+            Notification notification = new Notification.Builder(MainActivity.this)
+                    .setContentIntent(appIntent)
+                    .setSmallIcon(R.drawable.ic_launcher)
+                    .setTicker("Ticker")
+                    .setWhen(System.currentTimeMillis())
+                    .setAutoCancel(false)
+                    .setContentTitle("title")
+                    .setContentText("text")
+                    .setOngoing(false)
+                    .build();
+            mNotificationManager.notify(110,notification);*/
+            tmp = which;
         }
-    };*/
+        System.out.println("tmp"+tmp);
+    }
 
 }

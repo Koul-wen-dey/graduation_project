@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/koul/Desktop/USBeaconSample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/home/koul/Desktop/graduation_project/graduation_project/USBeaconSample/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/home/koul/.gradle/caches/transforms-2/files-2.1/f09e09e7a1a9b6c5697c87c390be8144/support-media-compat-27.1.1/res/values-v21/values-v21.xml",
